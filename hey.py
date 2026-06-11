@@ -112,9 +112,17 @@ def krydsvektor3D (x1,x2,y1,y2,z1,z2):
     Yverdien = (z1*x2-x1*z2)
     Zverdien = (x1*y2-y1*x2)
 
-def stedvektor ():
-
-def():
+def polærTilKartasian (v,l):
+    y1 = l*math.sin(v)
+    x1 = l*math.cos(v)
+    print(x1)
+    print(y1)
+ 
+def KartasianTilPolær (x1,y1):
+    l = math.sqrt((x1**2) + (y1**2))
+    v = math.atan(x1/y1)
+    print(l)
+    print(v)
 
 def():
 
