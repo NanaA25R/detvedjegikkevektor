@@ -111,6 +111,7 @@ def krydsvektor3D (x1,x2,y1,y2,z1,z2):
     Xverdien = (y1*z2-z1*y2)
     Yverdien = (z1*x2-x1*z2)
     Zverdien = (x1*y2-y1*x2)
+    return(Xverdien,Yverdien,Zverdien)
 
 def polærTilKartasian (v,l):
     y1 = l*math.sin(v)
@@ -124,18 +125,58 @@ def KartasianTilPolær (x1,y1):
     print(l)
     print(v)
 
-def():
+def enhedsvektor2D (x1,y1):
+    lændgde = math.sqrt((x1**2) + (y1**2))
+    x = x1/ lændgde
+    y= y1 /lændgde
+    print(x)
+    print (y)
 
-def():
+def enhedsvektor3D (x1,y1,z1):
+    lændgde = math.sqrt((x1**2) + (y1**2) + (z1**2))
+    x = x1/ lændgde
+    y = y1 /lændgde
+    z = z1/lændgde
+    return(x,z,y)
 
-def():
+def projektionA(x1,y1,z1,x2,y2,z2):
+    if z1 == None:
+         z1 = 0
+    if z2 == None:
+         z2 = 0
+    Dot = (x1*x2+y1*y2+z1*z2)
+    A = math.sqrt(x1**2+y1**2+z1**2)
+    Projektion= Dot/A
+    return(Projektion)
 
-def():
+def projektionB(x1,y1,z1,x2,y2,z2):
+    if z1 == None:
+         z1 = 0
+    if z2 == None:
+         z2 = 0
+    Dot = (x1*x2+y1*y2+z1*z2)
+    B = math.sqrt(x2**2+y2**2+z2**2)
+    Projektion= Dot/B
+    return(Projektion)
 
-def():
+def tværvektor2d(x1,y1):
+    if x1 == 0:
+        return None
+    tvær = -y1/x1
+    return(tvær)
 
-def():
+def punktvektor(x1,y1,x2,y2):
+    vektorx = (x2-x1)
+    vektory = (y2-y1)
+    return(vektorx,vektory)
 
-def():
-
-def():
+def Prikprodukt(x1,y1,x2,y2,z1,z2):
+    if z1 == None:
+         z1 = 0
+    if z2 == None:
+         z2 = 0
+    Dot = (x1 * x2 + y1 * y2 + z1 * z2)
+    LængdeV1 = math.sqrt(x1**2+y1**2+z1**2)
+    LængdeV2 = math.sqrt(x2**2+y2**2+z2**2)
+    Theta = math.acos((Dot)/(LængdeV1*LængdeV2))
+    return(Dot,LængdeV1,LængdeV2,Theta)
