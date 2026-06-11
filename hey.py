@@ -180,3 +180,6 @@ def Prikprodukt(x1,y1,x2,y2,z1,z2):
     LængdeV2 = math.sqrt(x2**2+y2**2+z2**2)
     Theta = math.acos((Dot)/(LængdeV1*LængdeV2))
     return(Dot,LængdeV1,LængdeV2,Theta)
+
+
+##############DONE####################
