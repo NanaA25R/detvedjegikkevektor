@@ -8,6 +8,7 @@ def Vektor2DLængde(x1,y1):
 
     print('længden af vektor1=')
     print(længde)
+    return(længde)
 
 def  Vektor2Dminus(x1,y1,x2,y2):
     minus1X2 = (x1-x2)
@@ -27,6 +28,7 @@ def  Vektor2Dminus(x1,y1,x2,y2):
     print(minus2X1)
     print('Y=')
     print(minus2Y1)
+    return(minus2Y1,minus1X2,minus1Y2,minus2X1)
 
 def Vektor3Dminus(x1,y1,x2,y2,z1,z2):
     minus1X2 = (x1-x2)
@@ -53,6 +55,7 @@ def Vektor3Dminus(x1,y1,x2,y2,z1,z2):
     print(minus2Y1)
     print('Z=')
     print(minus2Z1)
+    return(minus1X2,minus1Y2,minus1Z2,minus2X1,minus2Y1,minus2Z1)
 
 def vektor2Dplus(x1,y1,x2,y2):
     plusX = (x1+x2)
@@ -61,6 +64,7 @@ def vektor2Dplus(x1,y1,x2,y2):
     print(plusX)
     print('Y=')
     print(plusY)
+    return(plusY,plusX)
 
 def vektor3Dplus(x1,y1,x2,y2,z1,z2):
     plusX = (x1+x2)
@@ -72,6 +76,7 @@ def vektor3Dplus(x1,y1,x2,y2,z1,z2):
     print(plusY)
     print('Z=')
     print(plusZ)
+    return(plusX,plusY,plusZ)
 
 def Vektor2DlægdeAFplus(x1,x2,y1,y2):
     x1 = float(x1)
@@ -84,12 +89,15 @@ def Vektor2DlægdeAFplus(x1,x2,y1,y2):
   
     længdeAfplus = math.sqrt(plusY**2+plusX**2)
     print(længdeAfplus)
+    return(længdeAfplus)
+
 
 def skallar2D (x1,y1,s):
     skallarpruduktX = (x1*s) 
     skallarpruduktY = (y1*s) 
     print(skallarpruduktY)
     print(skallarpruduktX)
+    return(skallarpruduktY,skallarpruduktX)
 
 def skallar3D (x1,y1,z1,s):
     skallarpruduktX = (x1*s) 
@@ -98,14 +106,17 @@ def skallar3D (x1,y1,z1,s):
     print(skallarpruduktY)
     print(skallarpruduktX)
     print(skallarpruduktZ)
+    return(skallarpruduktY,skallarpruduktX,skallarpruduktZ)
 
 def Vektor2Dvinkel(x1,x2,y1,y2):
     Vinkel = math.acos((x1*x2+y1*y2)/(math.sqrt((x1**2) + (y1**2))*(math.sqrt((x2**2) + (y2**2)))))
     print(math.degrees(Vinkel))
+    return(math.degrees(Vinkel))
     
 def Vektor3Dvinkel(x1,x2,y1,y2,z1,z2):
     Vinkel3D = math.acos((x1*x2+y1*y2+z1*z2)/(math.sqrt((x1**2) + (y1**2) + (z1**2))*(math.sqrt((x2**2) + (y2**2) + (z2**2)))))
     print(math.degrees(Vinkel3D))
+    return(math.degrees(Vinkel3D))
 
 def krydsvektor3D (x1,x2,y1,y2,z1,z2):
     Xverdien = (y1*z2-z1*y2)
@@ -118,12 +129,14 @@ def polærTilKartasian (v,l):
     x1 = l*math.cos(v)
     print(x1)
     print(y1)
+    return(x1,y1)
  
 def KartasianTilPolær (x1,y1):
     l = math.sqrt((x1**2) + (y1**2))
     v = math.atan(x1/y1)
     print(l)
     print(v)
+    return(v,l,)
 
 def enhedsvektor2D (x1,y1):
     lændgde = math.sqrt((x1**2) + (y1**2))
