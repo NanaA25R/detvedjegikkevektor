@@ -77,30 +77,39 @@ x6inputfelt=tkinter.Entry(vinduet)
 x6inputfelt.config(width=10)
 x6inputfelt.place(x=540,y=65)
 
+x37inputfelt=tkinter.Entry(vinduet)
+x37inputfelt.config(width=10)
+x37inputfelt.place(x=620,y=65)
 
-#VIRKER IKKE 
-def beregn2Dminus():
+x38inputfelt=tkinter.Entry(vinduet)
+x38inputfelt.config(width=10)
+x38inputfelt.place(x=700,y=65)
+
+
+
+def beregn2Dog3Dminus():
     x1 =float(x3inputfelt.get())
     y1 =float(x4inputfelt.get())
 
     x2 =float(x5inputfelt.get())
     y2 =float(x6inputfelt.get())
+
+    hey.Vektor2Dminus (x1,y1,x2,y2)
      
 
-    if(x1!=""and y1!="" and x2!="" and y2!=""):     
-        x1=hey.Vektor2Dminus (x1,y1,x2,y2)
-        y1=hey.Vektor2Dminus(x1,y1,x2,y2)
+    if(x37inputfelt.get()!="" and x38inputfelt.get()!=""):  
+        z1=float(x37inputfelt.get())
+        z2=float(x38inputfelt.get())
+        hey.Vektor3Dminus (x1,y1,x2,y2,z1,z2)
 
-        x2=hey.Vektor2Dminus(x1,y1,x2,y2)
-        y2=hey.Vektor2Dminus(x1,y1,x2,y2)
+        
 
-
-
-
+   
+    
 #knap
 Knap2=tkinter.Button(vinduet)
-Knap2.config(width=12,text="Beregn",command=beregn2Dminus)
-Knap2.place(x=400,y=100)  
+Knap2.config(width=12,text="Beregn",command=beregn2Dog3Dminus)
+Knap2.place(x=480,y=100)  
 
 #Label
 x5label=tkinter.Label(vinduet)
@@ -118,6 +127,22 @@ x7label.place(x=480,y=40)
 x8label=tkinter.Label(vinduet)
 x8label.config(text="y2")
 x8label.place(x=560,y=40)
+
+x111label=tkinter.Label(vinduet)
+x111label.config(text="z1")
+x111label.place(x=635,y=40)
+
+x112label=tkinter.Label(vinduet)
+x112label.config(text="z1")
+x112label.place(x=730,y=40)
+
+x113label=tkinter.Label(vinduet)
+x113label.config(text="minusværdien af v1-v2 er")
+x113label.place(x=300,y=130)
+
+x114label=tkinter.Label(vinduet)
+x114label.config(text="")
+x114label.place(x=340,y=130)
 
 
 
@@ -151,10 +176,6 @@ x12inputfelt.place(x=300,y=210)
 
 
 
-
-
-
-
 def BeregnVektor2DlægdeAFplus():
     x1 = float(x9inputfelt.get())   #inputfelt og get
     y1 = float(x10inputfelt.get())
@@ -183,30 +204,42 @@ Knap2.place(x=400,y=250)
 #inputfelter
 x12inputfelt=tkinter.Entry(vinduet)
 x12inputfelt.config(width=10)
-x12inputfelt.place(x=700,y=65)
+x12inputfelt.place(x=1000,y=65)
 
 x13inputfelt=tkinter.Entry(vinduet)
 x13inputfelt.config(width=10)
-x13inputfelt.place(x=780,y=65)
+x13inputfelt.place(x=1080,y=65)
 
 x14inputfelt=tkinter.Entry(vinduet)
 x14inputfelt.config(width=10)
 x14inputfelt.place(x=860,y=65)
 
-
+x15inputfelt=tkinter.Entry(vinduet)
+x15inputfelt.config(width=10)
+x15inputfelt.place(x=940,y=65)
 
 
 
 def beregnSkallar2Dog3D():
     x1= float(x12inputfelt.get())
     y1= float(x13inputfelt.get())
-    s = float(x14inputfelt.get())
+    z1= float(x14inputfelt.get())
+    s = float(x15inputfelt.get())
 
-    skallarpruduktX,skallarpruduktY=hey.skallar2D(x1,y1,s)
+    if(x1 and y1 and s):
+        skallarpruduktX,skallarpruduktY = hey.skallar2D(x1,y1,s)
 
-    x22label=tkinter.Label(vinduet)                    
-    x22label.config(text = f"Resultater: ({skallarpruduktY}, {skallarpruduktX})")
-    x22label.place(x=800,y=800) 
+        x22label=tkinter.Label(vinduet)                    
+        x22label.config(text = f"Resultater: ({skallarpruduktY}, {skallarpruduktX})")
+        x22label.place(x=800,y=800) 
+
+
+    if(x1 and y1 and z1 and s):
+        skallarpruduktX,skallarpruduktY,skallarpruduktZ = hey.skallar3D(x1,y1,z1,s)
+
+        x23label=tkinter.Label(vinduet)                    
+        x23label.config(text = f"Resultater: ({skallarpruduktY}, {skallarpruduktX},{skallarpruduktZ})")
+        x23label.place(x=850,y=800) 
     
 
 #knap
@@ -219,12 +252,320 @@ Knap2.place(x=765,y=100)
 
 
 
-def skallar2D (x1,y1,s):
-    skallarpruduktX = (x1*s) 
-    skallarpruduktY = (y1*s) 
-    print(skallarpruduktY)
-    print(skallarpruduktX)
 
+
+
+def vektor3DOG2Dvinkel():
+    x1=float()
+    y1=float()
+    x2=float()
+    y2=float()
+    z1=float()
+    z2=float()
+
+    if(x1 and y1 and x2 and y2):
+        Vinkel=hey.Vektor2Dvinkel (x1,y1,x2,y2)
+
+        x24label=tkinter.Label(vinduet)                    
+        x24label.config(text = Vinkel)
+        x24label.place(x=850,y=800) 
+    
+    if(x1 and y1 and x2 and y2 and z1 and z2):
+        Vinkel=hey.Vektor3Dvinkel (x1,y1,x2,y2,z1,z2)
+        x24label=tkinter.Label(vinduet)                    
+        x24label.config(text = Vinkel3D)
+        x24label.place(x=850,y=800) 
+
+
+
+    
+
+x16inputfelt=tkinter.Entry(vinduet)
+x16inputfelt.config(width=10)
+x16inputfelt.place(x=540,y=360)
+
+x17inputfelt=tkinter.Entry(vinduet)
+x17inputfelt.config(width=10)
+x17inputfelt.place(x=460,y=360)
+
+x18inputfelt=tkinter.Entry(vinduet)
+x18inputfelt.config(width=10)
+x18inputfelt.place(x=380,y=360)
+
+x19inputfelt=tkinter.Entry(vinduet)
+x19inputfelt.config(width=10)
+x19inputfelt.place(x=300,y=360)
+
+
+
+def krydsvektor3D():
+    x1=float(x16inputfelt.get())             #insæt inputfleter
+    x2=float(x17inputfelt.get())
+    y1=float(x18inputfelt.get())
+    y2=float(x19inputfelt.get())
+    z1=float()
+    z2=float()
+
+    Xverdien,Yverdien,Zverdien=hey.krydsvektor3D(x1,x2,y1,y2,z1,z2)
+
+    x24label=tkinter.Label(vinduet)                    
+    x24label.config(text = f"Resultater: ({Xverdien}, {Yverdien},{Zverdien})")
+    x24label.place(x=900,y=800) 
+
+
+Knap2=tkinter.Button(vinduet)
+Knap2.config(width=12,text="Beregn",command=krydsvektor3D)
+Knap2.place(x=400,y=400)  
+
+
+
+
+
+
+
+
+x20inputfelt=tkinter.Entry(vinduet)
+x20inputfelt.config(width=10)
+x20inputfelt.place(x=120,y=210)
+
+x21inputfelt=tkinter.Entry(vinduet)
+x21inputfelt.config(width=10)
+x21inputfelt.place(x=40,y=210)
+
+def polærTilKartasian():
+    v = float(x20inputfelt.get())
+    l = float(x21inputfelt.get())
+
+    v,l=hey.polærTilKartasian(v,l)
+
+    x25label=tkinter.Label(vinduet)                    
+    x25label.config(text = f"Resultater: ({x1}, {y1})")
+    x25label.place(x=900,y=800) 
+
+
+Knap2=tkinter.Button(vinduet)
+Knap2.config(width=12,text="Beregn",command=polærTilKartasian)
+Knap2.place(x=60,y=250)  
+
+
+
+
+
+
+
+x22inputfelt=tkinter.Entry(vinduet)
+x22inputfelt.config(width=10)
+x22inputfelt.place(x=120,y=360)
+
+x23inputfelt=tkinter.Entry(vinduet)
+x23inputfelt.config(width=10)
+x23inputfelt.place(x=40,y=360)
+
+
+
+def KartasianTilPolær():
+    x1 = float(x22inputfelt.get())
+    y1 = float(x23inputfelt.get())
+
+    x1,y1=hey.KartasianTilPolær(x1,y1)     
+
+    x26label=tkinter.Label(vinduet)                    
+    x26label.config(text = f"Resultater: ({v}, {l})")
+    x26label.place(x=900,y=800) 
+
+
+Knap2=tkinter.Button(vinduet)
+Knap2.config(width=12,text="Beregn",command=KartasianTilPolær)      #knap er skæv
+Knap2.place(x=60,y=420) 
+
+
+
+
+
+#x24inputfelt=tkinter.Entry(vinduet)
+#x24inputfelt.config(width=10)
+#x24inputfelt.place(x=120,y=360)
+
+#x25inputfelt=tkinter.Entry(vinduet)
+#x25inputfelt.config(width=10)
+#x25inputfelt.place(x=40,y=360)
+
+#x26inputfelt=tkinter.Entry(vinduet)
+#x26inputfelt.config(width=10)
+#x26inputfelt.place(x=120,y=360)
+
+
+
+def enhedsvektor2D ():
+    x1=float()                                       #MANGLER INPUTFELTER OG PLACERING
+    y1=float()
+    z1=float()
+
+    if(x1 and y1):
+        længde = hey.enhedsvektor2D(x1,y1)
+
+        x27label=tkinter.Label(vinduet)                    
+        x27label.config(text = f"Resultater: ({x},{y})")
+        x27label.place(x=900,y=800) 
+
+
+
+    if(x1 and y1 and z1):
+        længde = hey.enhedsvektor3D (x1,y1,z1)
+
+        x28label=tkinter.Label(vinduet)                    
+        x28label.config(text = f"Resultater: ({x},{y},{z})")
+        x28label.place(x=900,y=800) 
+
+
+
+
+#def projektionA(x1,y1,z1,x2,y2,z2):
+    #if z1 == None:
+        # z1 = 0
+    #if z2 == None:
+       #  z2 = 0
+    #Dot = (x1*x2+y1*y2+z1*z2)
+   # A = math.sqrt(x1**2+y1**2+z1**2)
+   # Projektion= Dot/A
+   # return(Projektion)
+
+#def projektionB(x1,y1,z1,x2,y2,z2):
+   # if z1 == None:
+       #  z1 = 0
+   # if z2 == None:
+       #  z2 = 0
+   # Dot = (x1*x2+y1*y2+z1*z2)
+   # B = math.sqrt(x2**2+y2**2+z2**2)
+   # Projektion= Dot/B
+   # return(Projektion)
+
+
+
+
+
+
+def tværvektor2d ():
+    x1 = float()           #mangler inoutfleter og knap
+    y1 = float()
+
+    tvær= hey.tværvektor2d(x1,y1)
+
+    x29label=tkinter.Label(vinduet)                    
+    x29label.config(text = tvær)
+    x29label.place(x=900,y=800)
+
+
+
+
+
+
+x27inputfelt=tkinter.Entry(vinduet)
+x27inputfelt.config(width=10)
+x27inputfelt.place(x=300,y=510)
+
+x28inputfelt=tkinter.Entry(vinduet)
+x28inputfelt.config(width=10)
+x28inputfelt.place(x=380,y=510)
+
+x29inputfelt=tkinter.Entry(vinduet)
+x29inputfelt.config(width=10)
+x29inputfelt.place(x=460,y=510)
+
+x30inputfelt=tkinter.Entry(vinduet)
+x30inputfelt.config(width=10)
+x30inputfelt.place(x=540,y=510)
+
+
+def punktvektor ():
+    x1 = float(x27inputfelt.get())
+    y1 = float(x28inputfelt.get())                   
+    x2 = float(x29inputfelt.get())
+    y2 = float(x30inputfelt.get())
+
+    vektorx,vektory = hey.punktvektor (x1,y1,x2,y2)
+
+    x30label=tkinter.Label(vinduet)                    
+    x30label.config(text =f"Resultater: ({vektorx},{vektory})" )
+    x30label.place(x=900,y=800)
+
+
+Knap2=tkinter.Button(vinduet)
+Knap2.config(width=12,text="Beregn",command=punktvektor)     
+Knap2.place(x=400,y=550) 
+
+
+
+x31inputfelt=tkinter.Entry(vinduet)
+x31inputfelt.config(width=10)
+x31inputfelt.place(x=300,y=510)
+
+x32inputfelt=tkinter.Entry(vinduet)
+x32inputfelt.config(width=10)
+x32inputfelt.place(x=380,y=510)
+
+x33inputfelt=tkinter.Entry(vinduet)
+x33inputfelt.config(width=10)
+x33inputfelt.place(x=460,y=510)
+
+x34inputfelt=tkinter.Entry(vinduet)
+x34inputfelt.config(width=10)
+x34inputfelt.place(x=540,y=510)
+
+x35inputfelt=tkinter.Entry(vinduet)
+x35inputfelt.config(width=10)
+x35inputfelt.place(x=540,y=510)
+
+x36inputfelt=tkinter.Entry(vinduet)
+x36inputfelt.config(width=10)
+x36inputfelt.place(x=540,y=510)
+
+
+
+
+def Prikprodukt():
+    x1=float(x31inputfelt.get())           #mangler inputgleter + knap
+    y1=float(x32inputfelt.get())
+    x2= float(x33inputfelt.get())
+    y2=float(x34inputfelt.get())
+    z1=float(x35inputfelt.get())
+    z2=float(x36inputfelt.get())
+
+
+    Dot,LængdeV1,LængdeV2,Theta = hey.Prikprodukt(x1,y1,x2,y2,z1,z2)
+    
+    #Dot=
+    #LængdeV1=
+    #LængdeV2=
+    #Theta= hey.
+
+    
+Knap2=tkinter.Button(vinduet)
+Knap2.config(width=12,text="Beregn",command=Prikprodukt)     
+Knap2.place(x=400,y=600) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
     
 
 
