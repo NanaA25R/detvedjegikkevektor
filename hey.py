@@ -69,6 +69,7 @@ def vektor2Dplus(x1,y1,x2,y2):
     print(plusX)
     print('Y=')
     print(plusY)
+    return(plusX,plusY)
 
 def vektor3Dplus(x1,y1,x2,y2,z1,z2):
     plusX = (x1+x2)
@@ -80,6 +81,8 @@ def vektor3Dplus(x1,y1,x2,y2,z1,z2):
     print(plusY)
     print('Z=')
     print(plusZ)
+    return(plusX,plusY,plusZ)
+
 
 def Vektor2DlægdeAFplus(x1,x2,y1,y2):
     x1 = float(x1)
@@ -91,12 +94,14 @@ def Vektor2DlægdeAFplus(x1,x2,y1,y2):
     plusY = (y1+y2)
   
     længdeAfplus = math.sqrt(plusY**2+plusX**2)
+    print(længdeAfplus)
     return(længdeAfplus)
 
 def skallar2D (x1,y1,s):
     skallarpruduktX = (x1*s) 
     skallarpruduktY = (y1*s) 
-    print(skallarpruduktX,skallarpruduktY)   #print virker men ik' return
+    print(skallarpruduktX)
+    print(skallarpruduktY)   #print virker men ik' return
     return(skallarpruduktX,skallarpruduktY)
    
     
@@ -108,7 +113,7 @@ def skallar3D (x1,y1,z1,s):
     print(skallarpruduktY)
     print(skallarpruduktX)
     print(skallarpruduktZ)
-    #return(skallarpruduktX,skallarpruduktY,skallarpruduktZ)
+    return(skallarpruduktX,skallarpruduktY,skallarpruduktZ)
 
 
 def Vektor2Dvinkel(x1,x2,y1,y2):
@@ -155,6 +160,7 @@ def enhedsvektor3D (x1,y1,z1):
     x = x1/ lændgde
     y = y1 /lændgde
     z = z1/lændgde
+    print(x,y,x)
     return(x,y,z)
 
 def projektionA(x1,y1,z1,x2,y2,z2):
@@ -186,6 +192,8 @@ def tværvektor2d(x1,y1):
 def punktvektor(x1,y1,x2,y2):
     vektorx = (x2-x1)
     vektory = (y2-y1)
+    print("Resukattvek:",vektorx , vektory)
+    
     return(vektorx,vektory)
 
 def Prikprodukt(x1,y1,x2,y2,z1,z2):
@@ -197,6 +205,7 @@ def Prikprodukt(x1,y1,x2,y2,z1,z2):
     LængdeV1 = math.sqrt(x1**2+y1**2+z1**2)
     LængdeV2 = math.sqrt(x2**2+y2**2+z2**2)
     Theta = math.acos((Dot)/(LængdeV1*LængdeV2))
+    print("resulatat:",Dot,LængdeV1,LængdeV2,Theta)
     return(Dot,LængdeV1,LængdeV2,Theta)
 
 
