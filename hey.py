@@ -10,7 +10,6 @@ def Vektor2DLængde(x1,y1):
     print(længde)
     return(længde)
 
-
 def  Vektor2Dminus(x1,y1,x2,y2):
     minus1X2 = float (x1-x2)
     minus1Y2 = float (y1-y2)
@@ -32,8 +31,8 @@ def  Vektor2Dminus(x1,y1,x2,y2):
 
     print('Y=')
     print(minus2Y1)
+    return(minus2Y1,minus1X2,minus1Y2,minus2X1)
 
-    return(minus1X2,minus1Y2,minus2X1,minus2Y1)
 
 
 def Vektor3Dminus(x1,y1,x2,y2,z1,z2):
@@ -61,6 +60,7 @@ def Vektor3Dminus(x1,y1,x2,y2,z1,z2):
     print(minus2Y1)
     print('Z=')
     print(minus2Z1)
+    return(minus1X2,minus1Y2,minus1Z2,minus2X1,minus2Y1,minus2Z1)
 
 def vektor2Dplus(x1,y1,x2,y2):
     plusX = (x1+x2)
@@ -83,7 +83,6 @@ def vektor3Dplus(x1,y1,x2,y2,z1,z2):
     print(plusZ)
     return(plusX,plusY,plusZ)
 
-
 def Vektor2DlægdeAFplus(x1,x2,y1,y2):
     x1 = float(x1)
     y1 = float(y1)
@@ -100,8 +99,6 @@ def Vektor2DlægdeAFplus(x1,x2,y1,y2):
 def skallar2D (x1,y1,s):
     skallarpruduktX = (x1*s) 
     skallarpruduktY = (y1*s) 
-    print(skallarpruduktX)
-    print(skallarpruduktY)   #print virker men ik' return
     return(skallarpruduktX,skallarpruduktY)
    
     
@@ -110,21 +107,17 @@ def skallar3D (x1,y1,z1,s):
     skallarpruduktX = (x1*s) 
     skallarpruduktY = (y1*s) 
     skallarpruduktZ = (z1*s) 
-    print(skallarpruduktY)
-    print(skallarpruduktX)
-    print(skallarpruduktZ)
     return(skallarpruduktX,skallarpruduktY,skallarpruduktZ)
 
 
 def Vektor2Dvinkel(x1,x2,y1,y2):
     Vinkel = math.acos((x1*x2+y1*y2)/(math.sqrt((x1**2) + (y1**2))*(math.sqrt((x2**2) + (y2**2)))))
-    print(math.degrees(Vinkel))
-    return(Vinkel)
+    return(math.degrees(Vinkel))
     
 def Vektor3Dvinkel(x1,x2,y1,y2,z1,z2):
     Vinkel3D = math.acos((x1*x2+y1*y2+z1*z2)/(math.sqrt((x1**2) + (y1**2) + (z1**2))*(math.sqrt((x2**2) + (y2**2) + (z2**2)))))
     print(math.degrees(Vinkel3D))
-    return(Vinkel3D)
+    return(math.degrees(Vinkel3D))
 
 def krydsvektor3D (x1,x2,y1,y2,z1,z2):
     Xverdien = (y1*z2-z1*y2)
@@ -135,15 +128,11 @@ def krydsvektor3D (x1,x2,y1,y2,z1,z2):
 def polærTilKartasian (v,l):
     y1 = l*math.sin(v)
     x1 = l*math.cos(v)
-    print(x1)
-    print(y1)
     return(x1,y1)
  
 def KartasianTilPolær (x1,y1):
     l = math.sqrt((x1**2) + (y1**2))
     v = math.atan(x1/y1)
-    print(l)
-    print(v)
     return(v,l)
 
 
@@ -151,8 +140,6 @@ def enhedsvektor2D (x1,y1):
     lændgde = math.sqrt((x1**2) + (y1**2))
     x = x1/ lændgde
     y= y1 /lændgde
-    print(x)
-    print (y)
     return(x,y)
 
 def enhedsvektor3D (x1,y1,z1):
@@ -160,18 +147,18 @@ def enhedsvektor3D (x1,y1,z1):
     x = x1/ lændgde
     y = y1 /lændgde
     z = z1/lændgde
-    print(x,y,x)
     return(x,y,z)
 
 def projektionA(x1,y1,z1,x2,y2,z2):
+
     if z1 == None:
          z1 = 0
     if z2 == None:
          z2 = 0
     Dot = (x1*x2+y1*y2+z1*z2)
     A = math.sqrt(x1**2+y1**2+z1**2)
-    Projektion= Dot/A
-    return(Projektion)
+    ProjektionA= Dot/A
+    return(ProjektionA)
 
 def projektionB(x1,y1,z1,x2,y2,z2):
     if z1 == None:
@@ -180,8 +167,8 @@ def projektionB(x1,y1,z1,x2,y2,z2):
          z2 = 0
     Dot = (x1*x2+y1*y2+z1*z2)
     B = math.sqrt(x2**2+y2**2+z2**2)
-    Projektion= Dot/B
-    return(Projektion)
+    ProjektionB= Dot/B
+    return(ProjektionB)
 
 def tværvektor2d(x1,y1):
     if x1 == 0:
@@ -191,9 +178,7 @@ def tværvektor2d(x1,y1):
 
 def punktvektor(x1,y1,x2,y2):
     vektorx = (x2-x1)
-    vektory = (y2-y1)
-    print("Resukattvek:",vektorx , vektory)
-    
+    vektory = (y2-y1)    
     return(vektorx,vektory)
 
 def Prikprodukt(x1,y1,x2,y2,z1,z2):
@@ -205,7 +190,6 @@ def Prikprodukt(x1,y1,x2,y2,z1,z2):
     LængdeV1 = math.sqrt(x1**2+y1**2+z1**2)
     LængdeV2 = math.sqrt(x2**2+y2**2+z2**2)
     Theta = math.acos((Dot)/(LængdeV1*LængdeV2))
-    print("resulatat:",Dot,LængdeV1,LængdeV2,Theta)
     return(Dot,LængdeV1,LængdeV2,Theta)
 
 
